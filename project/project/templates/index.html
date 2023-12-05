@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<form  action="searh" methode="get" accept-charset="utf-8">
+<div class="row justify-content-center m-5">
+   
+    <span class=" justify-content-center m-5">  bienvenue sur notre platforme d'emission </span>
+   
+   <input type="search" class="form-control form-control-lg"name="query"placeholder="entrée votre recherche" style=" border-radius:20px" >
+     
+
+</div> </form>
+
+    <div class="row justify-content-center m-5">
+        <form class="pt-3" action="form/" method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="file" class="form-control form-control-lg"  required="true" name="files"  >
+            </div>
+            <div class="mt-3 "style="margin-left:170px">
+                <button class="btn btn-success loginbtn" name="login" type="submit">importer</button>
+              </div>
+        </form>
+        </div>
+{% endblock %}

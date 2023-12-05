@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-6 text-center  " style="background-color:#F5F5F5;height:50px">
+  <span class=""> <a href="{% url 'etudiant' %}"class=" text-dark"> etudiant</a></span>
+    </div>
+    <div class="col-6 text-center" >
+        <span class=""> <a href="{% url 'bull' %}"class=" text-dark" > bulletin</a></span>
+          </div>
+</div>
+<div class="card shadow m-4">
+  <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">presentation</h6>
+  </div>
+  <div class="card-body">
+   
+      <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                  <tr>
+                      <th>matricule</th>
+                      <th>nom et prenom</th>
+                      <th>download</th>
+                      
+                  </tr>
+              </thead>
+              
+              <tbody> {% for etud in etudiant%}
+                  <tr>
+                      <td>{{ etud.mat_etud}}</td>
+                      <td>{{ etud.nom|upper}}</td> 
+                      <td><a href="{% url 'pdf' etud_id=etud.id %}">download</td> 
+                      
+                      {% endfor %}
+                  </tr></tbody></table>  
+                  <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+            
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-primary" href="login.html">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+{% endblock %}

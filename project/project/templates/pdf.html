@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+ 
+    
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <!-- Fonts -->
+    <style>
+      .row{
+        display: flex;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .one {
+        flex: 1 1 auto;
+      }
+
+      .two {
+        flex: 1 1 auto;
+      }
+
+      .three {
+        flex: 1 1 auto;
+      }
+      .four {
+        flex: 1 1 auto;
+      }
+    .a ,.b,.c,.d{
+        text-align: center;
+    }
+    .a{
+      font-size: small;
+    }
+    .c{
+      color: blue;
+    }
+    .d{
+      color: yellowgreen;
+    }
+    table{
+      margin:10px;
+      width: 100%;
+      border-collapse: collapse;
+      font-size:90%;
+      
+    }
+    .B{
+      width: 100%; 
+    }
+    .A,th{
+     
+      text-align: center;
+      border: 1px dotted black;
+      border-collapse:collapse;
+    }
+    td,th{
+      padding-top:2px;
+      
+      text-align:center
+
+    }
+ 
+ tr:nth-child(2n){
+  background:#ddd;
+ }
+ th{
+  border: 1px dotted black;
+  background-color:#ddd;
+ 
+  font-weight:normal;
+ }
+    </style>
+   
+
+  </head>
+  <body>
+ <table>
+  <tr>
+    <td>  <img src="{% static 'asset/logo.png' %}"  class="img-fluid " alt="" ></td>
+    <td>  <h5 class="a">REPUBLIQUE DU CAMEROUN</h5>
+         <h5 class="a"> Paix travail  Patrie</h5>
+        <h5 class="a">UNIVERSITE DE DOUALA</h5></td>
+    <td> </td>
+    <td> <h5 class="a">REPUBLIC OF CAMEROON</h5>
+      <h5 class="a"> Peace Work  Fatherland</h5>
+      <h5 class="a">UNIVERSITY OF DOUALA</h5></td>
+    <td></td>
+  </tr>
+
+ </table>
+  <h1 class="b">ECOLE NORMALE  SUPERIEURE D’ENSEIGNEMENT TECHNIQUE </h1>
+  <h5 class="b">B.P. 1872 Douala Cameroun Tél. (Fax)(237) 699 753 095 email  cabenset@yahoo.fr </h5>
+  <h1 class="c">RELEVE DE NOTES / TRANSCRIPT </h1>
+  <h1 class="d">LICENCE PROFESSIONNELLE / PROFESSIONAL BACHELOR </h1>
+
+ <table>
+  <tr class="B">
+    <td>nom prenom</td>
+    <td>{{etudiant.nom}} </td>
+    <td>matricule</td>
+    <td> {{etudiant.mat_etud}}</td>
+  </tr></table>
+  <table>
+    <tr class="B">
+      <td>Né(e) le: </td>
+      <td> </td>
+      <td>A:                
+        At: 
+        </td>
+      <td> </td>
+    </tr></table>
+    <table>
+      <tr class="B">
+        <td>Filière: </td>
+        <td> </td>
+        <td>option: </td>
+        <td> GLO</td>
+        <td> annee academique </td>
+        <td>2022/2023 </td>
+        
+      </tr></table>
+  <table>
+      <thead>
+          <tr>
+              <th>CODE UE
+                
+                </th>
+              <th>CODE EC</th>
+              <th>INTITULE DE L’EC</th>
+              <th>NOTE</th>
+              
+              
+          </tr>
+      </thead>
+      
+      <tbody>{% for e in ec%}
+        
+        <tr  >
+          <td class="A"> </td>
+              <td class="A">{{e.mat_ec}}</td> 
+              <td class="A">,,,,,</td> 
+              <td class="A">{{e.note}}</td>
+          </tr> {% endfor %}</tbody>
+        </table>  
+        <h3 style="text-align: center;background-color:#2262C6;">Decision: Admin</h3>
+</body>
+</html>

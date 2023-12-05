@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row justify-content-center mt-5">
+  <div class="col-6 text-center  " >
+<span class=""> <a href="{% url 'etudiant' %}"class=" text-dark"> etudiant</a></span>
+  </div>
+  <div class="col-6 text-center"style="background-color:#F5F5F5;height:50px" >
+      <span class=""> <a href="{% url 'bull' %}"class=" text-dark" > bulletin</a></span>
+        </div>
+{% endblock %}
