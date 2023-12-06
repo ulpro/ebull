@@ -44,7 +44,7 @@ def import_data(request):
         
        #fonction d'ajout
         col=[]  
-        df_ec=df.iloc[4].tolist()
+        df_ec=df.iloc[4].tolist() #conversion en liste
         ec=df_ec[3:len(df_ec)-1]
         
         
